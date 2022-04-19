@@ -9,6 +9,18 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
     <link href="https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=ваш API-ключ&lang=ru_RU" type="text/javascript">
+    </script>
+    <script type="text/javascript">
+        ymaps.ready(init);
+
+        function init() {
+            var myMap = new ymaps.Map("map", {
+                center: [51.09071799, 71.41805771],
+                zoom: 12
+            });
+        }
+    </script>
 </head>
 
 <body>
@@ -33,6 +45,7 @@
         </div>
     </section>
 
+
     <section id="page-header" class="about-header">
         <h2>#KnowUs </h2>
         <p>Independent project </p>
@@ -51,15 +64,16 @@
             <marquee bgcolor="#ccc" loop="-1" scrollamount="5" width="100%">Buy awesome products with a user-friendly and easy-to-learn interface. Dress as you like, thanks to the choice of basic and creative models.</marquee>
         </div>
     </section>
+    <section>
+        <div id="map" style="width: 600px; height: 400px; margin:0 auto"></div>
+    </section>
 
-    <!-- <section id="about-app" class="section-p1">
+    <section id="about-app" class="section-p1">
         <h1>Download Our <a href="#">App</a></h1>
         <div class="video">
             <video autoplay muted loop src="img/about/1.mp4"></video>
         </div>
-    </section> -->
-
-    
+    </section>
 
     <section id="feature" class="section-p1">
         <div class="fe-box">
