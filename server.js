@@ -8,6 +8,8 @@ app.use('/', express.static('public'));
 
 app.use("/", require("./public/main.js"));
 app.use("/shop", require("./public/shop.js"));
+app.use("/about", require("./public/about.js"));
+app.use("/blog", require("./public/blog.js"));
 app.use("/sproduct", require("./public/sproduct.js"));
 app.listen(port, () =>
     console.log(`App listening at http://localhost:${port}`)
