@@ -1,18 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="740a9eb6-3187-4322-b1cf-935cbdaafae4" name="Changes" comment="a">
-      <change afterPath="$PROJECT_DIR$/public/contact.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/contact.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/about.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/about.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/blog.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/blog.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/shop.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/shop.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/sproduct.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/sproduct.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
-    </list>
+    <list default="true" id="740a9eb6-3187-4322-b1cf-935cbdaafae4" name="Changes" comment="a" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -65,7 +54,7 @@
       <updated>1650372897838</updated>
       <workItem from="1650372903447" duration="1596000" />
       <workItem from="1650385377021" duration="2722000" />
-      <workItem from="1650396256588" duration="2592000" />
+      <workItem from="1650396256588" duration="2860000" />
     </task>
     <servers />
   </component>
