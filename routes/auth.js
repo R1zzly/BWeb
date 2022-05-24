@@ -4,6 +4,7 @@ const app = express();
 const session = require('express-session');
 const router = express.Router();
 const USER = require("../models/USER");
+const bcrypt = require('bcrypt');
 
 var passwordValidator = require('password-validator');
 var Passschema = new passwordValidator();
@@ -58,14 +59,27 @@ router.post("/register", async(req, res) => {
             Role: "User",
         })
 
-        newUser.save((err) => {
-            if (err) {
-                console.log(err);
-            } else {
-                console.log(newUser)
-                res.redirect("/login")
-            }
-        })
+        bcrypt.genSalt(10,(err,salt)=>{
+            bcrypt.hash(newUser.password,salt,(err,hash)=>{
+                if(err){
+                    throw err;
+                }
+                else{
+
+                    newUser.password = hash;
+
+                    newUser.save((err)=>{
+                        if(err){
+                            console.log(err);
+                        }
+                        else{
+                            res.redirect('/login');
+                            console.log('Success');
+                        }
+                    })
+                }
+            });
+        });
 
     }
 })
