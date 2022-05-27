@@ -1,56 +1,88 @@
 {
   "swagger": "2.0",
   "info": {
+    "description": "Clothes shop",
     "version": "1.0.0",
-    "title": "ADShop BWeb",
-    "description": "My User Backend Project Application",
-    "license": {
-      "name": "MIT",
-      "url": "https://opensource.org/licenses/MIT"
-    }
+    "title": "Clothes shop"
   },
   "host": "localhost:3000",
   "basePath": "/",
-  "tags": [
-    {
-      "name": "Users",
-      "description": "API for users in the system"
-    }
-  ],
   "schemes": [
     "http"
   ],
-  "consumes": [
-    "application/json"
-  ],
-  "produces": [
-    "application/json"
+  "tags": [
+    {
+      "name": "Product",
+      "description": "API for product"
+    },
+    {
+      "name": "User",
+      "description": "API fro users"
+    }
   ],
   "paths": {
-    "/addUser": {
-      "post": {
-        "tags": [
-          "Users"
-        ],
-        "description": "Create new user in system",
-        "parameters": [
-          {
-            "name": "user",
-            "in": "body",
-            "description": "User that we want to create",
+    "/product": {
+      "get": {
+        "tags": ["Product"],
+        "summary": "Get all products",
+        "produces": ["application/json"],
+        "responses": {
+          "200": {
+            "description": "OK",
             "schema": {
-              "$ref": "#/definitions/User"
+              "$ref": "#/definitions/Product"
             }
           }
-        ],
-        "produces": [
-          "application/json"
+        }
+      }
+    },
+    "/product/{productId}": {
+      "get": {
+        "tags": ["Product"],
+        "summary": "Get products by ID",
+        "operationId": "getProductById",
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "productId",
+            "in": "path",
+            "description": "ID of product to return",
+            "required": true,
+            "type": "string"
+          }
         ],
         "responses": {
           "200": {
-            "description": "New user is created",
+            "description": "OK",
             "schema": {
-              "$ref": "#/definitions/User"
+              "$ref": "#/definitions/Product"
+            }
+          }
+        }
+      }
+    },
+    "/shop": {
+      "post": {
+        "tags": ["Product"],
+        "summary": "ADD product",
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Product"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Product"
             }
           }
         }
@@ -58,65 +90,90 @@
     },
     "/users": {
       "get": {
-        "tags": [
-          "Users"
+        "tags": ["User"],
+        "summary": "Get main page about yourself",
+        "operationId": "getProfile",
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "path",
+            "description": "ID of user to return",
+            "required": true,
+            "type": "string"
+          }
         ],
-        "summary": "Get all users in system",
         "responses": {
           "200": {
             "description": "OK",
             "schema": {
-              "$ref": "#/definitions/Users"
+              "$ref": "#/definitions/User"
             }
           }
         }
       }
     },
-    "/user/{id}": {
-      "parameters": [
-        {
-          "name": "id",
-          "in": "path",
-          "required": true,
-          "description": "ID of user that we want to find",
-          "type": "integer"
-        }
-      ],
-      "delete": {
-        "summary": "Delete user with given ID",
+    "/login": {
+      "post": {
         "tags": [
-          "Users"
+          "User"
         ],
-        "responses": {
-          "200": {
-            "description": "User is deleted",
-            "schema": {
-              "$ref": "#/definitions/User"
-            }
-          }
-        }
-      },
-      "put": {
-        "summary": "Update user with give ID",
-        "tags": [
-          "Users"
+        "summary": "Accepts some changes to user profile",
+        "description": "",
+        "operationId": "updateUser",
+        "produces": [
+          "application/json"
         ],
         "parameters": [
           {
-            "name": "user",
             "in": "body",
-            "description": "User with new values of properties",
+            "name": "body",
+            "description": "User object that needs to be updated",
+            "required": true,
             "schema": {
-              "$ref": "#/definitions/updateUser"
+              "$ref": "#/definitions/User"
             }
           }
         ],
         "responses": {
-          "200": {
-            "description": "User is updated",
+          "400": {
+            "description": "Invalid ID supplied"
+          },
+          "404": {
+            "description": "User not found"
+          }
+        }
+      }
+    },
+    "/register": {
+      "post": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Accepts some changes to user profile",
+        "description": "",
+        "operationId": "updateUser",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "User object that needs to be updated",
+            "required": true,
             "schema": {
               "$ref": "#/definitions/User"
             }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid ID supplied"
+          },
+          "404": {
+            "description": "User not found"
           }
         }
       }
@@ -124,88 +181,55 @@
   },
   "definitions": {
     "User": {
-      "required": [
-        "name",
-        "_id",
-        "companies"
-      ],
+      "type": "object",
       "properties": {
-        "_id": {
+        "firstName": {
+          "type": "string"
+        },
+        "lastName": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string",
+          "format": "email"
+        },
+        "password": {
+          "type": "string",
+          "format": "symbol"
+        }
+      },
+      "xml": {
+        "name": "User"
+      }
+    },
+    "Product": {
+      "type": "object",
+      "properties": {
+        "_id" : {
+          "type" : "ObjectId"
+        },
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "price": {
           "type": "integer",
-          "uniqueItems": true
+          "format": "int64"
         },
-        "isPublic": {
-          "type": "boolean"
-        },
-        "name": {
-          "type": "string"
-        },
-        "books": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "properties": {
-              "name": {
-                "type": "string"
-              },
-              "amount": {
-                "type": "number"
-              }
-            }
-          }
-
-        },
-        "companies": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-
+        "imageURL": {
+          "type": "string",
+          "format": "path"
         }
-
+      },
+      "xml": {
+        "name": "Product"
       }
-    },
-    "updateUser": {
-      "required": [
-        "name",
-        "companies"
-      ],
-      "properties": {
-        "isPublic": {
-          "type": "boolean"
-        },
-        "name": {
-          "type": "string"
-        },
-        "books": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "properties": {
-              "name": {
-                "type": "string"
-              },
-              "amount": {
-                "type": "number"
-              }
-            }
-          }
-
-        },
-        "companies": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-
-        }
-
-      }
-    },
-    "Users": {
-      "type": "array",
-      "$ref": "#/definitions/User"
     }
-
+  },
+  "externalDocs": {
+    "description": "Find out more about Swagger",
+    "url": "http://swagger.io"
   }
 }
