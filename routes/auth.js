@@ -16,12 +16,12 @@ Passschema
     .has().lowercase() // Must have lowercase letters
     .has().digits(2) // Must have at least 2 digits
 
-router.get("/register", (req, res) => {
+router.get("/", (req, res) => {
     res.render('signup', {
         ErrorsArr: [],
     })
 })
-router.post("/register", async(req, res) => {
+router.post("/", async(req, res) => {
     const { name, email, city, password } = req.body;
 
 

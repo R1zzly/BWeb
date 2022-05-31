@@ -1,68 +1,69 @@
-<!DOCTYPE html>
-<html>
+<!--<!DOCTYPE html>-->
+<!--<html>-->
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>A&D Shop</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"/>
-    <link href="https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/style.css">
-</head>
+<!--<head>-->
+<!--    <meta charset="utf-8">-->
+<!--    <meta http-equiv="X-UA-Compatible" content="IE=edge">-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1">-->
+<!--    <title>A&D Shop</title>-->
+<!--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"/>-->
+<!--    <link href="https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">-->
+<!--    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">-->
+<!--    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">-->
+<!--    <link rel="stylesheet" href="css/style.css">-->
+<!--</head>-->
 
-<body>
-<%- include('partials/navbar.ejs') %>
+<!--<body>-->
+<!--<%- include('partials/navbar.ejs') %>-->
 
-<main>
-    <div class="container">
-        <div class="col-md-7 col-lg-8">
-            <h4 class="mb-3">Register Form</h4>
-            <form action="/register" class="needs-validation" novalidate method="post">
-                <div class="row g-3">
-                    <div class="col-sm-6">
-                        <label for="email" class="form-label">Email</label>
-                        <input type="text" class="form-control" name="email" id="email" placeholder="" value="" required>
-                        <div class="invalid-feedback">
-                            Valid email is required.
-                        </div>
-                    </div>
-                    <div class="col-sm-6">
-                        <label for="password" class="form-label">Password</label>
-                        <input type="password" class="form-control" name="password" id="password" placeholder="" value="" required>
-                        <div class="invalid-feedback">
-                            Valid password is required.
-                        </div>
-                    </div>
-                    <div class="col-sm-6">
-                        <label for="firstName" class="form-label">First name</label>
-                        <input type="text" class="form-control" name="firstName" id="firstName" placeholder="" value="" required>
-                        <div class="invalid-feedback">
-                            Valid first name is required.
-                        </div>
-                    </div>
-                    <div class="col-sm-6">
-                        <label for="lastName" class="form-label">Last name</label>
-                        <input type="text" class="form-control" name="lastName" id="lastName" placeholder="" value="" required>
-                        <div class="invalid-feedback">
-                            Valid last name is required.
-                        </div>
-                    </div>
-                </div>
+<!--<main>-->
+<!--    <div class="container">-->
+<!--        <div class="col-md-7 col-lg-8">-->
+<!--            <h4 class="mb-3">Register Form</h4>-->
+<!--            <form action="/register" class="needs-validation" novalidate method="post">-->
+<!--                <div class="row g-3">-->
+<!--                    <div class="col-sm-6">-->
+<!--                        <label for="email" class="form-label">Email</label>-->
+<!--                        <input type="text" class="form-control" name="email" id="email" placeholder="" value="" required>-->
+<!--                        <div class="invalid-feedback">-->
+<!--                            Valid email is required.-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="col-sm-6">-->
+<!--                        <label for="password" class="form-label">Password</label>-->
+<!--                        <input type="password" class="form-control" name="password" id="password" placeholder="" value="" required>-->
+<!--                        <div class="invalid-feedback">-->
+<!--                            Valid password is required.-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="col-sm-6">-->
+<!--                        <label for="firstName" class="form-label">First name</label>-->
+<!--                        <input type="text" class="form-control" name="firstName" id="firstName" placeholder="" value="" required>-->
+<!--                        <div class="invalid-feedback">-->
+<!--                            Valid first name is required.-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="col-sm-6">-->
+<!--                        <label for="lastName" class="form-label">Last name</label>-->
+<!--                        <input type="text" class="form-control" name="lastName" id="lastName" placeholder="" value="" required>-->
+<!--                        <div class="invalid-feedback">-->
+<!--                            Valid last name is required.-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
 
-                <hr class="my-4">
-                <button class="w-100 btn btn-primary btn-lg" type="submit">Create</button>
-            </form>
-        </div>
-    </div>
-</main>
-
-
-<%- include('partials/footer.ejs') %>
+<!--                <hr class="my-4">-->
+<!--                <button class="w-100 btn btn-primary btn-lg" type="submit">Create</button>-->
+<!--            </form>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</main>-->
 
 
-<script src="script.js"></script>
-</body>
+<!--<%- include('partials/footer.ejs') %>-->
 
-</html>
+
+<!--<script src="script.js"></script>-->
+<!--</body>-->
+
+<!--</html>-->
