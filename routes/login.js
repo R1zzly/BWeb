@@ -1,11 +1,3 @@
-// const express = require("express");
-// const router = express.Router();
-// const userController = require("../controllers/userController");
-//
-// router.get('/', (req, res) => res.render('login'));
-// router.post('/', userController.login);
-//
-// module.exports = router;
 const express = require('express');
 const session = require("express-session");
 const router = express.Router();
@@ -45,3 +37,18 @@ router.post("/", async(req, res) => {
 })
 
 module.exports = router
+
+
+
+
+
+
+
+// const express = require("express");
+// const router = express.Router();
+// const userController = require("../controllers/userController");
+//
+// router.get('/', (req, res) => res.render('login'));
+// router.post('/', userController.login);
+//
+// module.exports = router;

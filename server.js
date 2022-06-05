@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 const session = require('express-session');
 const path = require('path');
 const ejs = require('ejs');
-//const config = require('./config/db.config');
+const config = require('./config/db.config');
 const swaggerUi = require('swagger-ui-express')
 
 
